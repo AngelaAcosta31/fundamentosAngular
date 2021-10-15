@@ -1,0 +1,13 @@
+<app-spinner *ngIf="cargando"></app-spinner>
+<section *ngIf="!cargando">
+    <h1 class="titulo1">Usuario</h1>
+    <h4 class="display-6"> <span class="titulo"> Nombre: </span> {{this.nombre}}</h4>
+    <h4 class="display-6"> <span class="titulo"> Email:  </span> {{ this.email }}</h4>
+    <h4 class="display-6"> <span class="titulo"> Genero: </span> {{ this.genero }}</h4>
+    <h4 class="display-6"> <span class="titulo"> Estado: </span> <span [ngStyle]="{'color': this.status == 'active' ? 'green': 'red'}">{{ this.status }}</span></h4>
+    <br>
+    <button class="btn btn-light color mb-6" routerLink="/dashboard">Volver</button>
+    <br>
+
+</section>
+<br>

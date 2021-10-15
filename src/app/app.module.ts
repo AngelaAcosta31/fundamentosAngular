@@ -7,7 +7,12 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { CardComponent } from './components/dashboard/card/card.component';
-
+import { InicioComponent } from './components/inicio/inicio.component';
+import { HttpClientModule } from '@angular/common/http';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { ListadoUsuariosComponent } from './components/dashboard/listado-usuarios/listado-usuarios.component';
+import { UsuarioComponent } from './components/dashboard/usuario/usuario.component';
+import { SpinnerComponent } from './components/spinner/spinner.component';
 
 @NgModule({
   declarations: [
@@ -15,12 +20,18 @@ import { CardComponent } from './components/dashboard/card/card.component';
     NavbarComponent,
     FooterComponent,
     DashboardComponent,
-    CardComponent
+    CardComponent,
+    InicioComponent,
+    PageNotFoundComponent,
+    ListadoUsuariosComponent,
+    UsuarioComponent,
+    SpinnerComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

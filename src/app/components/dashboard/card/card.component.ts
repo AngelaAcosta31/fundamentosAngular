@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-card',
@@ -11,20 +12,27 @@ export class CardComponent implements OnInit {
   nombre: string;
   email: string;
   genero: string;
+  id: number;
   
-  constructor() { 
+  constructor(private router: Router) { 
     this.usuarios ="";
     this.nombre ="";
     this.email ="";
     this.genero ="";
+    this.id = 0
   }
 
 
   ngOnInit(): void {
 
-    this.nombre = this.usuarios.nombre;
+    this.nombre = this.usuarios.name;
     this.email = this.usuarios.email;
-    this.genero = this.usuarios.genero;
+    this.genero = this.usuarios.gender;
+    this.id = this.usuarios.id;
+  }
+
+  verDetalles(): void {
+    this.router.navigate(['dashboard/usuario'], {queryParams: {id:this.id}});
   }
 
 

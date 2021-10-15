@@ -1,11 +1,4 @@
 <div class="container">
-    <h1>Listado de Usuarios</h1>
-    <input type="text" [(ngModel)]="texto">
-    <h2>{{texto}}</h2>
-    <div class="row">
-        <div *ngFor= "let usuario of listaUsuarios" Class="col-md-4">
-            <app-card [usuarios]="usuario"></app-card>
-        </div>
-    </div>
+    <router-outlet></router-outlet>
 </div>
 

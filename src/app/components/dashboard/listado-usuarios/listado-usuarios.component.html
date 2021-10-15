@@ -1,0 +1,10 @@
+<section>
+    <br>
+    <app-spinner *ngIf="cargando"></app-spinner>
+    <div class="row gx-5 gy-2 mt-2 mb-2">
+        <div *ngFor= "let usuario of listaUsuarios" Class="col-md-3">
+            <app-card [usuarios]="usuario"></app-card>
+        </div>
+    </div>
+
+</section>
