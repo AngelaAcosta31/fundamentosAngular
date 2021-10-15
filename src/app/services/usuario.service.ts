@@ -6,12 +6,14 @@ import { Observable, Subject } from 'rxjs';
   providedIn: 'root'
 })
 export class UsuarioService {
-  private nuevoTexto = new Subject<string>();
-  
 
-  constructor(private http: HttpClient) { }
-  getUsuarios(): Observable<any> { 
-    const URL = 'https://gorest.co.in/public/v1/users';
+
+  constructor(private http: HttpClient) {
+
+   }
+
+  getUsuarios(pagina: number): Observable<any> { 
+    const URL = 'https://gorest.co.in/public/v1/users?page='+ pagina;
     return this.http.get(URL);
   }
 

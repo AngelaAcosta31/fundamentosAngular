@@ -10,16 +10,32 @@ export class ListadoUsuariosComponent implements OnInit {
 
   listaUsuarios: any;
   cargando: boolean = false;
+  paginaActual : number ;
+  totalPaginas: number ;
 
   constructor(private usuarioService: UsuarioService) { 
     this.cargando = true;
-    this.usuarioService.getUsuarios().subscribe(data => {
-      this.cargando=false;
-      this.listaUsuarios = data.data;
-      
-    });
+    this.paginaActual = 1;
+    this.totalPaginas = 1;
+    this.obtenerUsuarios();
   }
   ngOnInit(): void {
   }
 
+  paginaAnterior(): void {
+    this.paginaActual--;
+    this.obtenerUsuarios();
+  }
+  paginaSiguiente(): void {
+    this.paginaActual++;
+    this.obtenerUsuarios();
+  }
+  obtenerUsuarios(): void {
+    this.usuarioService.getUsuarios(this.paginaActual).subscribe(data => {
+      this.cargando=false;
+      this.listaUsuarios = data.data;
+      this.paginaActual = data.meta.pagination.page;
+      this.totalPaginas = data.meta.pagination.pages; 
+    })
+  }
 }
