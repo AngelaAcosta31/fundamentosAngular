@@ -9,7 +9,7 @@ import { UsuarioService } from 'src/app/services/usuario.service';
 export class ListadoUsuariosComponent implements OnInit {
 
   listaUsuarios: any;
-  cargando: boolean = false;
+  cargando: boolean;
   paginaActual : number ;
   totalPaginas: number ;
 

@@ -13,12 +13,12 @@ export class UsuarioService {
    }
 
   getUsuarios(pagina: number): Observable<any> { 
-    const URL = 'https://gorest.co.in/public/v1/users?page='+ pagina;
+    const URL = "https://gorest.co.in/public/v1/users?page=" + pagina;
     return this.http.get(URL);
   }
 
   getUsuario(id:any): Observable<any> {
-    const URL = 'https://gorest.co.in/public/v1/users/'+ id;
+    const URL = "https://gorest.co.in/public/v1/users/"+ id;
     return this.http.get(URL);
   }
 }

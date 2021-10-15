@@ -10,7 +10,7 @@
     <br>
     <div class="mt-2 mb-4 text-center">
         <span class="btn btn-light color" (click)="paginaAnterior()" *ngIf="paginaActual != 1"> Anterior</span>
-        {{paginaActual}} /{{totalPaginas}}
+        {{ paginaActual }}/{{totalPaginas}}
         <span class="btn btn-light color" (click)="paginaSiguiente()" *ngIf="paginaActual != totalPaginas"> Siguiente</span>
     </div>
     <br>
